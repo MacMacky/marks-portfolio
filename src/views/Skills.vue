@@ -9,7 +9,7 @@
           <tooltip :label="'React'" :mastery="85">
             <react />
           </tooltip>
-          <tooltip :label="'Express.js'" :mastery="65">
+          <tooltip :label="'Express.js'" :mastery="70">
             <express />
           </tooltip>
           <tooltip :label="'TypeScript'" :mastery="70">
@@ -31,10 +31,10 @@
       </v-flex>
       <v-flex xs12 md5 lg5>
         <card-skill :title="'Sub-skills'" :color="'light-blue lighten-2'">
-          <tooltip :label="'jQuery'" :mastery="90">
+          <tooltip :label="'jQuery'" :mastery="85">
             <jquery />
           </tooltip>
-          <tooltip :label="'Redux'" :mastery="90">
+          <tooltip :label="'Redux'" :mastery="75">
             <redux />
           </tooltip>
           <tooltip :label="'MySQL'" :mastery="55">
