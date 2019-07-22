@@ -2,7 +2,7 @@
   <v-timeline-item :color="color">
     <template v-slot:icon>
       <v-avatar>
-        <img :src="imgSrc" />
+        <img :style="{content:`url(${imgSrc})`}" />
       </v-avatar>
     </template>
     <template v-slot:opposite>
