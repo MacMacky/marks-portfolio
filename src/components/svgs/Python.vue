@@ -1,5 +1,5 @@
 <template>
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <svg xmlns="http://www.w3.org/2000/svg" :class="classes" viewBox="0 0 128 128">
     <linearGradient
       id="a"
       gradientUnits="userSpaceOnUse"
@@ -53,6 +53,12 @@
 </template>
 <script>
 export default {
-  name: "Python"
+  name: "Python",
+  props: {
+    classes: {
+      type: String,
+      default: ""
+    }
+  }
 };
 </script>

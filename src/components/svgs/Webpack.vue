@@ -1,5 +1,5 @@
 <template>
-  <svg id="webpack" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <svg id="webpack" :class="classes" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
     <g id="original">
       <path
         fill="#8ed6fb"
@@ -14,6 +14,12 @@
 </template>
 <script>
 export default {
-  name: "Webpack"
+  name: "Webpack",
+  props: {
+    classes: {
+      type: String,
+      default: ""
+    }
+  }
 };
 </script>

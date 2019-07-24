@@ -1,5 +1,5 @@
 <template>
-  <svg id="typescript" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <svg id="typescript" :class="classes" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
     <g id="original">
       <rect fill="#fff" x="22.67" y="47" width="99.67" height="73.67" />
       <path
@@ -13,7 +13,13 @@
 </template>
 <script>
 export default {
-  name: "Typescript"
+  name: "Typescript",
+  props: {
+    classes: {
+      type: String,
+      default: ""
+    }
+  }
 };
 </script>
 

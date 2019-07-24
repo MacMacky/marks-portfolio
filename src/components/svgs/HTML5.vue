@@ -1,5 +1,5 @@
 <template>
-  <svg viewBox="0 0 128 128">
+  <svg viewBox="0 0 128 128" :class="classes">
     <path fill="#E44D26" d="M19.037 113.876l-10.005-112.215h109.936l-10.016 112.198-45.019 12.48z" />
     <path fill="#F16529" d="M64 116.8l36.378-10.086 8.559-95.878h-44.937z" />
     <path
@@ -14,6 +14,12 @@
 </template>
 <script>
 export default {
-  name: "HTML5"
+  name: "HTML5",
+  props: {
+    classes: {
+      type: String,
+      default: ""
+    }
+  }
 };
 </script>

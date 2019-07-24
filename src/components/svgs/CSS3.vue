@@ -1,5 +1,5 @@
 <template>
-  <svg viewBox="0 0 128 128">
+  <svg viewBox="0 0 128 128" :class="classes">
     <path
       fill="#1572B6"
       d="M18.814 114.123l-10.054-112.771h110.48l-10.064 112.754-45.243 12.543-45.119-12.526z"
@@ -25,6 +25,12 @@
 </template>
 <script>
 export default {
-  name: "CSS3"
+  name: "CSS3",
+  props: {
+    classes: {
+      type: String,
+      default: ""
+    }
+  }
 };
 </script>

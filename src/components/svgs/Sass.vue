@@ -1,5 +1,5 @@
 <template>
-  <svg viewBox="0 0 128 128">
+  <svg viewBox="0 0 128 128" :class="classes">
     <path
       fill-rule="evenodd"
       clip-rule="evenodd"
@@ -10,6 +10,12 @@
 </template>
 <script>
 export default {
-  name: "Sass"
+  name: "Sass",
+  props: {
+    classes: {
+      type: String,
+      default: ""
+    }
+  }
 };
 </script>
