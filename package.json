@@ -8,7 +8,8 @@
     "lint": "vue-cli-service lint",
     "test:e2e": "vue-cli-service test:e2e",
     "test:unit": "vue-cli-service test:unit",
-    "start": "npm run serve"
+    "start": "npm run serve",
+    "test": "npm run test:unit"
   },
   "dependencies": {
     "core-js": "^2.6.5",
@@ -19,6 +20,7 @@
     "vuex": "^3.0.1"
   },
   "devDependencies": {
+    "@types/jest": "^24.0.15",
     "@vue/cli-plugin-babel": "^3.9.0",
     "@vue/cli-plugin-e2e-cypress": "^3.9.0",
     "@vue/cli-plugin-eslint": "^3.9.0",
@@ -71,10 +73,10 @@
     "transform": {
       "^.+\\.vue$": "vue-jest",
       ".+\\.(css|styl|less|sass|scss|svg|png|jpg|ttf|woff|woff2)$": "jest-transform-stub",
-      "^.+\\.jsx?$": "babel-jest"
+      "^.+\\.jsx?$": "<rootDir>/node_modules/babel-jest"
     },
     "transformIgnorePatterns": [
-      "/node_modules/"
+      "/node_modules/(?!vue-awesome)"
     ],
     "moduleNameMapper": {
       "^@/(.*)$": "<rootDir>/src/$1"
