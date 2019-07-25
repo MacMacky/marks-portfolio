@@ -1,5 +1,5 @@
 <template>
-  <v-card color="white" style="border-radius:6px" class="ma-3">
+  <v-card color="white" class="ma-3 card-project">
     <v-img :src="require('../assets/ezgif.com-gif-maker.gif')" height="200px"></v-img>
     <v-card-text class="blue-grey lighten-5 pb-0">
       <div>
@@ -53,7 +53,7 @@
           <p class="text-xs-center mb-0">
             <v-btn flat href="https://www.google.com" target="__blank">
               <v-icon color="grey darken-4">code</v-icon>
-              <span class="black--text">&nbsp; Source Code</span>
+              <span class="black--text d-block">&nbsp; Source Code</span>
             </v-btn>
           </p>
         </v-flex>

@@ -5,7 +5,7 @@
         <links />
       </v-card-text>
       <v-card-text class="py-0">
-        <p class="heading">&copy; 2019 Mark Abeto</p>
+        <p class="heading">&copy; 2019 Mark A</p>
       </v-card-text>
     </v-card>
   </v-footer>
