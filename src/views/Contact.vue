@@ -1,7 +1,7 @@
 <template>
   <v-container class="py-0">
     <v-layout row justify-center>
-      <v-flex xs6>
+      <v-flex xs10 sm10 md6 lg6>
         <card-skill :color="'grey lighten-4'" :title="''" :isRipple="false">
           <v-layout row justify-space-around>
             <v-flex xs5>

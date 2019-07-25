@@ -1,12 +1,12 @@
 <template>
   <v-container>
-    <v-layout row>
-      <v-flex xs4 sm4 md4 lg4>
-        <v-avatar color="grey lighten-4" :size="'256px'">
+    <v-layout row wrap>
+      <v-flex xs12 sm12 md4 lg4 class="text-xs-center">
+        <v-avatar color="grey lighten-4 mb-2" :size="'256px'">
           <v-img :src="require('../assets/man.png')" />
         </v-avatar>
       </v-flex>
-      <v-flex xs8 sm8 md8 lg8>
+      <v-flex xs12 sm12 md8 lg8>
         <p
           class="subheading text-xs-left"
         >Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam soluta quos qui maiores exercitationem, modi culpa sint omnis, quisquam praesentium nulla delectus at, enim corporis. Repudiandae delectus necessitatibus numquam ducimus?</p>
