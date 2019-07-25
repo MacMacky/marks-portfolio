@@ -1,17 +1,20 @@
 <template>
-  <v-layout justify-center mt-1>
-    <v-flex xs9>
-      <v-timeline>
-        <time-line-item
-          v-for="item in timelineItems"
-          :key="item.color"
-          :color="item.color"
-          :imgSrc="item.src"
-          :date="item.date"
-        ></time-line-item>
-      </v-timeline>
-    </v-flex>
-  </v-layout>
+  <div id="timeline" class="pt-5 mt-3">
+    <h4 class="display-1 text-xs-center mt-4">Timeline</h4>
+    <v-layout justify-center mt-1>
+      <v-flex xs9>
+        <v-timeline>
+          <time-line-item
+            v-for="item in timelineItems"
+            :key="item.color"
+            :color="item.color"
+            :imgSrc="item.src"
+            :date="item.date"
+          ></time-line-item>
+        </v-timeline>
+      </v-flex>
+    </v-layout>
+  </div>
 </template>
 <script>
 import TimeLineItem from "@/components/TimelineItem.vue";
