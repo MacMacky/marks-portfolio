@@ -1,42 +1,70 @@
 <template>
-  <v-container class="py-0">
-    <v-layout row justify-center>
-      <v-flex xs10 sm10 md6 lg6>
-        <card-skill :color="'grey lighten-4'" :title="''" :isRipple="false">
-          <v-layout row justify-space-around>
-            <v-flex xs5>
-              <v-text-field label="Name" outline full-width light append-icon="person" />
-            </v-flex>
-            <v-flex xs5>
-              <v-text-field
-                label="Email"
-                type="email"
-                outline
-                full-width
-                light
-                append-icon="email"
-              />
-            </v-flex>
-          </v-layout>
-          <v-layout justify-center>
-            <v-flex xs11>
-              <v-text-field label="Location" outline full-width light append-icon="place" />
-            </v-flex>
-          </v-layout>
-          <v-layout justify-center>
-            <v-flex xs11>
-              <v-textarea label="Message" outline light value="asd" append-icon="message"></v-textarea>
-            </v-flex>
-          </v-layout>
-          <v-layout justify-center>
-            <v-flex xs11>
-              <v-btn color="blue" block dark @click="handleSendMessage" :loading="isSending">Send</v-btn>
-            </v-flex>
-          </v-layout>
-        </card-skill>
-      </v-flex>
-    </v-layout>
-  </v-container>
+  <div id="contact" class="mt-5 pt-5">
+    <h4 class="display-1 text-xs-center">Contact</h4>
+    <v-container class="py-0">
+      <v-layout row justify-center>
+        <v-flex xs10 sm10 md8 lg7>
+          <card-skill :color="'grey lighten-4'" :title="''" :isRipple="false">
+            <v-layout row justify-space-around>
+              <v-flex xs5>
+                <v-text-field
+                  light
+                  outline
+                  full-width
+                  label="Name"
+                  v-model="name"
+                  :rules="nameRules"
+                  append-icon="person"
+                />
+              </v-flex>
+              <v-flex xs5>
+                <v-text-field
+                  light
+                  outline
+                  full-width
+                  type="email"
+                  label="Email"
+                  v-model="email"
+                  :rules="emailRules"
+                  append-icon="email"
+                />
+              </v-flex>
+            </v-layout>
+            <v-layout justify-center>
+              <v-flex xs11>
+                <v-text-field
+                  light
+                  outline
+                  full-width
+                  label="Location"
+                  v-model="location"
+                  append-icon="place"
+                  :rules="locationRules"
+                />
+              </v-flex>
+            </v-layout>
+            <v-layout justify-center>
+              <v-flex xs11>
+                <v-textarea
+                  light
+                  outline
+                  label="Message"
+                  v-model="message"
+                  :rules="messageRules"
+                  append-icon="message"
+                ></v-textarea>
+              </v-flex>
+            </v-layout>
+            <v-layout justify-center>
+              <v-flex xs11>
+                <v-btn color="blue" dark @click="handleSendMessage" :loading="isSending">Send</v-btn>
+              </v-flex>
+            </v-layout>
+          </card-skill>
+        </v-flex>
+      </v-layout>
+    </v-container>
+  </div>
 </template>
 <script>
 import CardSkill from "@/components/CardSkill";
@@ -46,18 +74,64 @@ export default {
   name: "Contact",
   data: () => {
     return {
-      isSending: false
+      isSending: false,
+      email: "",
+      location: "",
+      name: "",
+      message: ""
     };
+  },
+  created() {
+    emailjs.init("user_mEN2ctZPReJpsfh9aVI8i");
   },
   components: {
     CardSkill
   },
+  computed: {
+    emailRules() {
+      return [
+        v => !!v || "Email is Required",
+        v => /.+@.+\.{1}.{2,}/.test(v) || "Please provide a valid Email"
+      ];
+    },
+    messageRules() {
+      return [
+        v => !!v || "Message is Required",
+        v => (v && v.length > 10) || "Please provide a valid Message"
+      ];
+    },
+    locationRules() {
+      return [
+        v => !!v || "Location is Required",
+        v => (v && v.length > 6) || "Please provide a valid Location"
+      ];
+    },
+    nameRules() {
+      return [
+        v => !!v || "Name is Required",
+        v => (v && v.length > 3) || "Please provide a valid Name"
+      ];
+    }
+  },
   methods: {
     handleSendMessage() {
       this.isSending = true;
-      setTimeout(() => {
-        this.isSending = false;
-      }, 3000);
+      emailjs
+        .send("default_service", "template_GNsxgOTU", {
+          name: this.name,
+          from_name: "Mark",
+          message_html: this.message,
+          from_location: this.location,
+          from_email: this.email
+        })
+        .then(resp => {
+          this.isSending = false;
+          console.log(resp);
+        })
+        .catch(err => {
+          this.isSending = false;
+          console.log(err);
+        });
     }
   }
 };
