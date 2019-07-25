@@ -1,6 +1,8 @@
 <template>
   <v-card :color="color" :ripple="isRipple">
-    <v-card-title class="headline text-xs-center d-block white--text">{{title}}</v-card-title>
+    <v-card-title
+      :class="`headline text-xs-center d-block white--text ${title === '' ? 'pt-0' : ''}`"
+    >{{title}}</v-card-title>
     <v-card-text class="text-xs-center">
       <slot></slot>
     </v-card-text>
