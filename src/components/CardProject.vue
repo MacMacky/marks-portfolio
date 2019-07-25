@@ -1,7 +1,7 @@
 <template>
   <v-card color="white" style="border-radius:6px" class="ma-3">
     <v-img :src="require('../assets/ezgif.com-gif-maker.gif')" height="200px"></v-img>
-    <v-card-text class="blue-grey lighten-5">
+    <v-card-text class="blue-grey lighten-5 pb-0">
       <div>
         <div class="headline black--text">{{projectName}}</div>
         <span class="title blue-grey--text darken-4">
@@ -31,10 +31,15 @@
               <component :is="comp" :classes="'link'"></component>
             </v-flex>
           </v-layout>
+          <v-layout row>
+            <v-flex xs3 sm4 md6 v-for="(comp,index) in backTechnologies[1]" :key="index">
+              <component :is="comp" :classes="'link'"></component>
+            </v-flex>
+          </v-layout>
         </v-flex>
       </v-layout>
     </v-card-text>
-    <v-card-text class="blue-grey lighten-5 pt-2">
+    <v-card-text class="blue-grey lighten-5 pt-1 pb-1">
       <v-layout row mt-1 pt-1>
         <v-flex xs6 md6 justify-center>
           <p class="text-xs-center mb-0">
