@@ -64,10 +64,17 @@
         </v-flex>
       </v-layout>
     </v-container>
+    <v-snackbar
+      :color="snackbarProps.color"
+      bottom
+      right
+      absolute
+      v-model="snackbarProps.open"
+    >{{snackbarProps.message}}</v-snackbar>
   </div>
 </template>
 <script>
-import CardSkill from "@/components/CardSkill";
+import CardSkill from "@/components/CardSkill.vue";
 import { setTimeout } from "timers";
 
 export default {
@@ -78,7 +85,13 @@ export default {
       email: "",
       location: "",
       name: "",
-      message: ""
+      message: "",
+      hasValidValues: [false, false, false, false],
+      snackbarProps: {
+        open: false,
+        message: "adfafa",
+        color: "green"
+      }
     };
   },
   created() {
@@ -90,48 +103,89 @@ export default {
   computed: {
     emailRules() {
       return [
-        v => !!v || "Email is Required",
+        v =>
+          (this.setValidity(0, true), !!v) ||
+          (this.setValidity(0, false), "Email is Required"),
         v => /.+@.+\.{1}.{2,}/.test(v) || "Please provide a valid Email"
       ];
     },
     messageRules() {
       return [
-        v => !!v || "Message is Required",
+        v =>
+          (this.setValidity(1, true), !!v) ||
+          (this.setValidity(1, false), "Message is Required"),
         v => (v && v.length > 10) || "Please provide a valid Message"
       ];
     },
     locationRules() {
       return [
-        v => !!v || "Location is Required",
-        v => (v && v.length > 6) || "Please provide a valid Location"
+        v =>
+          (this.setValidity(2, true), !!v) ||
+          (this.setValidity(2, false), "Location is Required"),
+        v =>
+          (this.setValidity(2, true), v && v.length > 6) ||
+          (this.setValidity(2, false), "Please provide a valid Location")
       ];
     },
     nameRules() {
       return [
-        v => !!v || "Name is Required",
-        v => (v && v.length > 3) || "Please provide a valid Name"
+        v =>
+          (this.setValidity(3, true), !!v) ||
+          (this.setValidity(3, false), "Name is Required"),
+        v =>
+          (this.setValidity(3, true), v && v.length > 3) ||
+          (this.setValidity(3, false), "Please provide a valid Name")
       ];
     }
   },
   methods: {
     handleSendMessage() {
-      this.isSending = true;
-      emailjs
-        .send("default_service", "template_GNsxgOTU", {
-          name: this.name,
-          from_name: "Mark",
-          message_html: this.message,
-          from_location: this.location,
-          from_email: this.email
-        })
-        .then(resp => {
-          this.isSending = false;
-          console.log(resp);
-        })
-        .catch(err => {
-          this.isSending = false;
-          console.log(err);
-        });
+      if (this.hasValidValues.some(value => !value)) {
+        this.updateSnackbarProps(
+          true,
+          "Please provide values in the following fields",
+          "red"
+        );
+      } else {
+        this.isSending = true;
+        emailjs
+          .send("default_service", "template_GNsxgOTU", {
+            name: this.name,
+            from_name: "Mark",
+            message_html: this.message,
+            from_location: this.location,
+            from_email: this.email
+          })
+          .then(resp => {
+            this.isSending = false;
+            this.updateSnackbarProps(
+              true,
+              "Your message has been sent Successfully.",
+              "green"
+            );
+            this.clearFields();
+          })
+          .catch(err => {
+            this.isSending = false;
+            this.updateSnackbarProps(true, e.message, "red");
+          });
+      }
+    },
+    updateSnackbarProps(open, message, color) {
+      this.snackbarProps = {
+        open,
+        message,
+        color
+      };
+    },
+    setValidity(index, isValid) {
+      this.hasValidValues[index] = isValid;
+    },
+    clearFields() {
+      (this.message = ""),
+        (this.location = ""),
+        (this.email = ""),
+        (this.name = "");
     }
   }
 };
