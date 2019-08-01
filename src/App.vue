@@ -176,7 +176,7 @@ html {
 svg {
   width: 140px;
   height: 100px;
-  transition: all 0.35s ease;
+  transition: all 0.35s ease-in-out;
 }
 svg.small {
   width: 50px !important;
