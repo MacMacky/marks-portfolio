@@ -5,69 +5,25 @@
       <v-layout row justify-space-around>
         <v-flex xs12 md5 lg5>
           <card-skill :title="'Main Skills'" :color="'blue darken-3'">
-            <tooltip :label="'JavaScript'" :mastery="80">
-              <javascript />
-            </tooltip>
-            <tooltip :label="'React'" :mastery="85">
-              <react />
-            </tooltip>
-            <tooltip :label="'Express.js'" :mastery="70">
-              <express />
-            </tooltip>
-            <tooltip :label="'TypeScript'" :mastery="70">
-              <typescript />
-            </tooltip>
-            <tooltip :label="'Node.js'" :mastery="70">
-              <nodejs />
-            </tooltip>
-            <tooltip :label="'Python'" :mastery="65">
-              <python />
-            </tooltip>
-            <tooltip :label="'HTML5'" :mastery="65">
-              <htmll />
-            </tooltip>
-            <tooltip :label="'CSS3'" :mastery="65">
-              <css />
+            <tooltip
+              v-for="item in mainSkills"
+              :label="item.label"
+              :key="item.label"
+              :mastery="item.mastery"
+            >
+              <component :is="item.component"></component>
             </tooltip>
           </card-skill>
         </v-flex>
         <v-flex xs12 md5 lg5>
           <card-skill :title="'Sub-skills'" :color="'light-blue lighten-2'">
-            <tooltip :label="'jQuery'" :mastery="85">
-              <jquery />
-            </tooltip>
-            <tooltip :label="'Redux'" :mastery="75">
-              <redux />
-            </tooltip>
-            <tooltip :label="'MySQL'" :mastery="55">
-              <mysql />
-            </tooltip>
-            <tooltip :label="'Material-UI'" :mastery="70">
-              <materialui />
-            </tooltip>
-            <tooltip :label="'Webpack'" :mastery="50">
-              <webpack />
-            </tooltip>
-            <tooltip :label="'Jest'" :mastery="75">
-              <jest />
-            </tooltip>
-            <tooltip :label="'Vue.js'" :mastery="60">
-              <vue />
-            </tooltip>
-            <tooltip :label="'Sass'" :mastery="55">
-              <sass />
-            </tooltip>
-            <tooltip :label="'Bootstrap'" :mastery="75">
-              <bootstrap />
-            </tooltip>
-            <tooltip :label="'Git'" :mastery="50">
-              <git />
-            </tooltip>
-            <tooltip :label="'Github'" :mastery="40">
-              <github />
-            </tooltip>
-            <tooltip :label="'Vuetify'" :mastery="70">
-              <vuetify />
+            <tooltip
+              v-for="item in subSkills"
+              :label="item.label"
+              :key="item.label"
+              :mastery="item.mastery"
+            >
+              <component :is="item.component"></component>
             </tooltip>
           </card-skill>
         </v-flex>
@@ -100,17 +56,21 @@ import Jquery from "@/components/svgs/jQuery";
 import Git from "@/components/svgs/Git";
 import Github from "@/components/svgs/Github";
 import Vuetify from "@/components/svgs/Vuetify";
+import Mocha from "@/components/svgs/Mocha";
+import Chai from "@/components/svgs/Chai";
 
 export default {
   name: "Skills",
   components: {
     Git,
     Vue,
-    Sass,
     Css,
+    Chai,
+    Sass,
     Jest,
     Htmll,
     Mysql,
+    Mocha,
     Redux,
     React,
     Github,
@@ -126,6 +86,38 @@ export default {
     Javascript,
     Typescript,
     Materialui
+  },
+  computed: {
+    mainSkills() {
+      return [
+        { component: Javascript, mastery: 80, label: "Javascript" },
+        { component: React, mastery: 85, label: "React" },
+        { component: Express, mastery: 70, label: "Express.js" },
+        { component: Typescript, mastery: 70, label: "TypeScript" },
+        { component: Nodejs, mastery: 70, label: "Node.js" },
+        { component: Python, mastery: 65, label: "Python" },
+        { component: Htmll, mastery: 65, label: "HTML5" },
+        { component: Css, mastery: 65, label: "CSS3" }
+      ];
+    },
+    subSkills() {
+      return [
+        { component: Jquery, mastery: 85, label: "jQuery" },
+        { component: Redux, mastery: 75, label: "Redux" },
+        { component: Mysql, mastery: 55, label: "MySQL" },
+        { component: Materialui, mastery: 70, label: "Material-UI" },
+        { component: Webpack, mastery: 50, label: "Webpack" },
+        { component: Jest, mastery: 75, label: "Jest" },
+        { component: Vue, mastery: 60, label: "Vue.js" },
+        { component: Sass, mastery: 55, label: "Sass" },
+        { component: Bootstrap, mastery: 75, label: "Bootstrap" },
+        { component: Git, mastery: 50, label: "Git" },
+        { component: Github, mastery: 40, label: "Github" },
+        { component: Vuetify, mastery: 70, label: "Vuetify" },
+        { component: Chai, mastery: 45, label: "Chai" },
+        { component: Mocha, mastery: 55, label: "Mocha" }
+      ];
+    }
   }
 };
 </script>
