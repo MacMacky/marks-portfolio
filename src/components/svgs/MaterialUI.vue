@@ -14,7 +14,7 @@
 </template>
 <script>
 export default {
-  name: "Materialui",
+  name: "Material-UI",
   props: {
     classes: {
       type: String,
