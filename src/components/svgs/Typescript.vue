@@ -13,7 +13,7 @@
 </template>
 <script>
 export default {
-  name: "Typescript",
+  name: "TypeScript",
   props: {
     classes: {
       type: String,
