@@ -16,7 +16,7 @@
 </template>
 <script>
 export default {
-  name: "Mysql",
+  name: "MySQL",
   props: {
     classes: {
       type: String,
