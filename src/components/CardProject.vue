@@ -15,12 +15,16 @@
           <p class="body-2 black--text text-xs-center">Front</p>
           <v-layout row class="mt-3">
             <v-flex xs3 sm4 md6 v-for="(comp,index) in frontTechnologies[0]" :key="index">
-              <component :is="comp" :classes="'link'"></component>
+              <span :title="comp.name">
+                <component :is="comp" :classes="'link'"></component>
+              </span>
             </v-flex>
           </v-layout>
           <v-layout row>
             <v-flex xs3 sm4 md6 v-for="(comp,index) in frontTechnologies[1]" :key="index">
-              <component :is="comp" :classes="'link'"></component>
+              <span :title="comp.name">
+                <component :is="comp" :classes="'link'"></component>
+              </span>
             </v-flex>
           </v-layout>
         </v-flex>
@@ -28,12 +32,16 @@
           <p class="body-2 black--text text-xs-center">Back</p>
           <v-layout row class="mt-3">
             <v-flex xs3 sm4 md6 v-for="(comp,index) in backTechnologies[0]" :key="index">
-              <component :is="comp" :classes="'link'"></component>
+              <span :title="comp.name">
+                <component :is="comp" :classes="'link'"></component>
+              </span>
             </v-flex>
           </v-layout>
           <v-layout row>
             <v-flex xs3 sm4 md6 v-for="(comp,index) in backTechnologies[1]" :key="index">
-              <component :is="comp" :classes="'link'"></component>
+              <span :title="comp.name">
+                <component :is="comp" :classes="'link'"></component>
+              </span>
             </v-flex>
           </v-layout>
         </v-flex>
@@ -81,6 +89,9 @@ export default {
       type: Array,
       default: () => []
     }
+  },
+  created() {
+    console.log(this.frontTechnologies);
   }
 };
 </script>
