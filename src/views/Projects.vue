@@ -8,7 +8,7 @@
             :projectName="'ML Shop Merchant'"
             :role="'Full Stack'"
             :frontTechnologies="mlshopmerchantFront"
-            :backTechnologies="mlshopadmin"
+            :backTechnologies="walletuploadweb"
           ></card-project>
         </v-flex>
         <v-flex xs12 md5 lg4>
@@ -21,8 +21,8 @@
         <v-flex xs12 md5 lg4>
           <card-project
             :role="'Back-End'"
-            :projectName="'ML Shop Admin'"
-            :backTechnologies="mlshopadmin"
+            :projectName="'Wallet Batch Upload Partners'"
+            :backTechnologies="walletuploadweb"
           ></card-project>
         </v-flex>
       </v-layout>
@@ -32,14 +32,16 @@
 <script>
 import CardProject from "@/components/CardProject.vue";
 
+import Chai from "@/components/svgs/Chai.vue";
 import Jest from "@/components/svgs/Jest.vue";
 import Sass from "@/components/svgs/Sass.vue";
 import React from "@/components/svgs/React.vue";
-import Mysql from "@/components/svgs/Mysql.vue";
+import MySQL from "@/components/svgs/Mysql.vue";
+import Mocha from "@/components/svgs/Mocha.vue";
 import Redux from "@/components/svgs/Redux.vue";
 import Nodejs from "@/components/svgs/NodeJS.vue";
 import Express from "@/components/svgs/Express.vue";
-import Typescript from "@/components/svgs/Typescript.vue";
+import TypeScript from "@/components/svgs/Typescript.vue";
 import Javascript from "@/components/svgs/Javascript.vue";
 import MaterialUI from "@/components/svgs/MaterialUI.vue";
 
@@ -47,25 +49,16 @@ export default {
   name: "Projects",
   data: () => {
     return {
-      mlshopadmin: [[Nodejs, Express, Mysql, Jest], [Typescript]],
+      mlshopadmin: [[Nodejs, Express, MySQL], [Mocha, Chai, TypeScript]],
+      walletuploadweb: [[Nodejs, Express, MySQL], [TypeScript, Jest]],
       mlshopmerchantFront: [
         [React, MaterialUI, Redux, Sass],
-        [Jest, Typescript, Javascript]
+        [Jest, TypeScript, Javascript]
       ]
     };
   },
   components: {
-    Jest,
-    Sass,
-    Redux,
-    Mysql,
-    React,
-    Nodejs,
-    Express,
-    CardProject,
-    "material-ui": MaterialUI,
-    Javascript,
-    Typescript
+    CardProject
   }
 };
 </script>
