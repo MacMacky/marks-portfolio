@@ -6,9 +6,9 @@
       </i>
     </template>
     <span class="black--text text-xs-center d-block">{{label}}</span>
-    <div class="text-xs-center">
+    <!-- <div class="text-xs-center">
       <v-progress-circular size="45" color="cyan darken-1" :value="mastery">{{mastery}}%</v-progress-circular>
-    </div>
+    </div> -->
   </v-tooltip>
 </template>
 <script>
