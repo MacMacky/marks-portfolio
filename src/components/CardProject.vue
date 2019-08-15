@@ -89,9 +89,6 @@ export default {
       type: Array,
       default: () => []
     }
-  },
-  created() {
-    console.log(this.frontTechnologies);
   }
 };
 </script>
