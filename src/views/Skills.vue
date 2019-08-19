@@ -43,6 +43,7 @@ import Nodejs from "@/components/svgs/NodeJS";
 import Python from "@/components/svgs/Python";
 import Htmll from "@/components/svgs/HTML5";
 import Css from "@/components/svgs/CSS3";
+import ES6 from "@/components/svgs/ES6";
 
 import Webpack from "@/components/svgs/Webpack";
 import Bootstrap from "@/components/svgs/Bootstrap";
@@ -62,6 +63,7 @@ import Chai from "@/components/svgs/Chai";
 export default {
   name: "Skills",
   components: {
+    ES6,
     Git,
     Vue,
     Css,
@@ -97,7 +99,8 @@ export default {
         { component: Nodejs, mastery: 70, label: "Node.js" },
         { component: Python, mastery: 65, label: "Python" },
         { component: Htmll, mastery: 65, label: "HTML5" },
-        { component: Css, mastery: 65, label: "CSS3" }
+        { component: Css, mastery: 65, label: "CSS3" },
+        { component: ES6, mastery: 80, label: "ES6" }
       ];
     },
     subSkills() {
