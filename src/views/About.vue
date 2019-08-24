@@ -9,9 +9,10 @@
           </v-avatar>
         </v-flex>
         <v-flex xs12 sm12 md8 lg8>
-          <p
-            class="subheading text-xs-left"
-          >Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam soluta quos qui maiores exercitationem, modi culpa sint omnis, quisquam praesentium nulla delectus at, enim corporis. Repudiandae delectus necessitatibus numquam ducimus?</p>
+          <p class="subheading text-xs-left">
+            Aside from programming, I love playing video games and I like reading books, fantasy, conspiracies and Tom Clancy's "Jack Ryan" book series.
+            And I love dogs, petting them and sometimes talk to them they're good therapists.
+          </p>
         </v-flex>
       </v-layout>
     </v-container>
