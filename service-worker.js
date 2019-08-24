@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "precache-manifest.8ff9a762226624c88121466169930135.js"
+  "precache-manifest.0da2c9ed91f15d576e3d5b27dde617ba.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "marks-portfolio"});
