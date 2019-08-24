@@ -59,6 +59,7 @@ import Github from "@/components/svgs/Github";
 import Vuetify from "@/components/svgs/Vuetify";
 import Mocha from "@/components/svgs/Mocha";
 import Chai from "@/components/svgs/Chai";
+import Flask from "@/components/svgs/Flask";
 
 export default {
   name: "Skills",
@@ -70,6 +71,7 @@ export default {
     Chai,
     Sass,
     Jest,
+    Flask,
     Htmll,
     Mysql,
     Mocha,
@@ -118,7 +120,8 @@ export default {
         { component: Github, mastery: 40, label: "Github" },
         { component: Vuetify, mastery: 70, label: "Vuetify" },
         { component: Chai, mastery: 45, label: "Chai" },
-        { component: Mocha, mastery: 55, label: "Mocha" }
+        { component: Mocha, mastery: 55, label: "Mocha" },
+        { component: Flask, mastery: 55, label: "Flask" }
       ];
     }
   }
