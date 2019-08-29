@@ -1,6 +1,7 @@
 import Vuetify from 'vuetify';
-import { shallowMount, createLocalVue } from '@vue/test-utils';
+import { shallowMount, createLocalVue, mount } from '@vue/test-utils';
 import CardSkill from '@/components/CardSkill.vue';
+import SideBarItem from '@/components/SideBarItem.vue';
 
 
 
@@ -53,5 +54,84 @@ describe('CardSkill.vue', () => {
   it('child component "v-card-text-sub" should have a class of "text-xs-center"', () => {
     expect(wrapper.find('v-card-text-stub').classes()).toContain('text-xs-center')
   });
+
+});
+
+
+
+describe('SideBarItem.vue', () => {
+  let wrapper;
+  let localVue;
+  beforeAll(() => {
+    localVue = createLocalVue();
+    localVue.use(Vuetify, {});
+    wrapper = shallowMount(SideBarItem, {
+      localVue,
+      stubs: {
+        'v-list-tile': true,
+        'v-list-tile-content': true,
+        'v-list-tile-title ': true,
+        'v-icon': true
+      },
+      propsData: {
+        to: '#some-id',
+        label: 'section',
+        icon: 'place'
+      }
+    })
+  })
+
+
+
+  it('should have a root wrapper of "SideBarItem"', () => {
+    expect(wrapper.is(SideBarItem)).toBeTruthy();
+  })
+
+  it('should have a wrapper with a name of "SideBarItem"', () => {
+    expect(wrapper.name()).toBe('SideBarItem')
+  })
+
+
+  it('should have a prop of "to" with a value of "#some-id"', () => {
+    expect(wrapper.props().to).toBe('#some-id');
+  });
+
+
+  it('should have a prop of "label" with a value of "section"', () => {
+    expect(wrapper.props().label).toBe('section');
+  });
+
+
+  it('should have a prop of "icon" with a value of "place"', () => {
+
+    expect(wrapper.props().icon).toBe('place');
+  });
+
+
+  it('should have a child component of "v-list-tile-stub"', () => {
+    expect(wrapper.find('v-list-tile-stub').exists()).toBeTruthy();
+  });
+
+
+  it('should have class of "text-xs-center" for component "v-list-tile-title"', () => {
+    expect(wrapper.find('v-list-tile-title-stub').classes()).toContain('text-xs-center')
+  });
+
+
+  it('should have class of "title" for component "v-list-tile-title"', () => {
+    expect(wrapper.find('v-list-tile-title-stub').classes()).toContain('title')
+  });
+
+
+  it('should have text of "place" for component "v-icon"', () => {
+    expect(wrapper.find('v-icon-stub').text()).toBe('place')
+  });
+
+
+
+  it('should have an atrribute of "href" with a value of "#some-id"', () => {
+    expect(wrapper.find('v-list-tile-stub').attributes('href')).toBe('#some-id');
+  })
+
 
 });
