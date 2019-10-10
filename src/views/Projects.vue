@@ -25,6 +25,13 @@
             :backTechnologies="walletuploadweb"
           ></card-project>
         </v-flex>
+        <v-flex xs12 md5 lg4>
+          <card-project
+            :role="'Back-End'"
+            :projectName="'Wallet Batch Upload Web'"
+            :backTechnologies="walletuploadweb"
+          ></card-project>
+        </v-flex>
       </v-layout>
     </v-container>
   </div>
