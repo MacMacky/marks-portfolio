@@ -57,7 +57,8 @@ path {
 svg.fa-facebook-square:hover path {
   fill: #496db9 !important;
 }
-svg.fa-github:hover path {
+svg.fa-github:hover path,
+svg.fa-dev:hover path {
   fill: #000 !important;
 }
 svg.fa-linkedin:hover path {
