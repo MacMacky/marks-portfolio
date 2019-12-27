@@ -10,8 +10,8 @@
         </v-flex>
         <v-flex xs12 sm12 md8 lg8>
           <p class="subheading text-xs-left">
-            Aside from programming, I love playing video games and I also love reading books genres like fantasy, conspiracies and Tom Clancy's "Jack Ryan" book series.
-            And I love dogs, petting them and sometimes talk to them they're good therapists.
+            Aside from programming, I love playing video games and I also love reading books about JavaScript, Python and also genres about fantasy, conspiracies, thrillers and Tom Clancy's "Jack Ryan" book series.
+            And I love dogs, petting them and sometimes talk to them about their day.
           </p>
         </v-flex>
       </v-layout>
