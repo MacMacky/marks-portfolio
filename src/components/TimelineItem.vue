@@ -9,7 +9,7 @@
       <span class="headline font-weight-bold" v-text="date"></span>
     </template>
     <v-card :color="color" dark>
-      <v-card-title class="title" v-text="title"></v-card-title>
+      <v-card-title class="title">{{title}}</v-card-title>
       <v-card-text class="white black--text">
         <p v-text="cardMessage"></p>
       </v-card-text>
@@ -19,6 +19,9 @@
 <script>
 export default {
   name: "Timeline-Item",
+  mounted() {
+    console.log(this);
+  },
   props: {
     date: {
       type: String,
@@ -34,7 +37,7 @@ export default {
     },
     title: {
       type: String,
-      default: "Lorem Ipsum Dolor"
+      default: "Lorem ipsum dolor"
     },
     cardMessage: {
       type: String,
@@ -44,4 +47,3 @@ export default {
   }
 };
 </script>
-
