@@ -11,7 +11,7 @@
     <v-card :color="color" dark>
       <v-card-title class="title">{{title}}</v-card-title>
       <v-card-text class="white black--text">
-        <p v-text="cardMessage"></p>
+        <p>{{cardMessage}}</p>
       </v-card-text>
     </v-card>
   </v-timeline-item>
@@ -19,9 +19,6 @@
 <script>
 export default {
   name: "Timeline-Item",
-  mounted() {
-    console.log(this);
-  },
   props: {
     date: {
       type: String,
