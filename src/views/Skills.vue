@@ -121,7 +121,7 @@ export default {
         { component: Vuetify, mastery: 70, label: "Vuetify" },
         { component: Chai, mastery: 45, label: "Chai" },
         { component: Mocha, mastery: 55, label: "Mocha" },
-        { component: Flask, mastery: 55, label: "Flask" }
+        // { component: Flask, mastery: 55, label: "Flask" }
       ];
     }
   }
