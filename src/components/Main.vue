@@ -9,8 +9,8 @@
           <v-flex xs12 md6 lg4>
             <v-card color="transparent" class="white--text grey darken-3">
               <v-card-text id="what">
-                <p class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                <p class="title">Eaque, porro atque. Totam fugiat saepe dolor, laboriosam amet,</p>
+                <p class="title mb-1">A JavaScript Developer with a passion for</p>
+                <p class="title">learning New Technologies about Web Development.</p>
                 <links />
               </v-card-text>
             </v-card>
