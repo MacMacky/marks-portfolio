@@ -3,7 +3,7 @@
     <v-layout pa-2 column fill-height class="lightbox white--text text-xs-center home">
       <v-flex class="mt-5">
         <v-avatar color="grey lighten-4" :size="'256px'">
-          <v-img :src="require('../assets/man.png')" />
+          <v-img :src="require('../assets/profile.jpg')" />
         </v-avatar>
         <v-layout justify-center class="pt-2">
           <v-flex xs12 md6 lg4>
