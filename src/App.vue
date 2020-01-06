@@ -12,6 +12,35 @@ export default {
 };
 </script>
 <style>
+@media screen and (max-width: 850px) and (min-width: 520px) {
+  svg:not(.small) {
+    width: 75px;
+    height: 75px;
+    margin: 0px 8px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  svg:not(.small) {
+    width: 65px;
+    height: 65px;
+    margin: 0px 8px;
+  }
+}
+
+@media screen and (min-width: 860px) {
+  svg:hover:not(.link) {
+    cursor: pointer;
+    width: 160px;
+    height: 130px;
+  }
+  svg {
+    width: 140px;
+    height: 100px;
+    transition: all 0.35s ease-in-out;
+  }
+}
+
 @media screen and (max-width: 676px) {
   .nav-menu {
     display: none !important;
@@ -67,18 +96,9 @@ svg.fa-linkedin:hover path {
 html {
   scroll-behavior: smooth;
 }
-svg {
-  width: 140px;
-  height: 100px;
-  transition: all 0.35s ease-in-out;
-}
+
 svg.small {
   width: 50px !important;
   height: 50px !important;
-}
-svg:hover:not(.link) {
-  cursor: pointer;
-  width: 160px;
-  height: 130px;
 }
 </style>
