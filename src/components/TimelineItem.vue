@@ -11,7 +11,14 @@
     <v-card :color="color" dark>
       <v-card-title class="title">{{title}}</v-card-title>
       <v-card-text class="white black--text">
-        <p>{{cardMessage}}</p>
+        <template v-if="Array.isArray(cardMessage)">
+          <ul>
+            <li v-for="(item, index) in cardMessage" :key="index">{{item}}</li>
+          </ul>
+        </template>
+        <template v-else>
+          <p>{{cardMessage}}</p>
+        </template>
       </v-card-text>
     </v-card>
   </v-timeline-item>
@@ -37,7 +44,7 @@ export default {
       default: "Lorem ipsum dolor"
     },
     cardMessage: {
-      type: String,
+      type: [String, Array],
       default:
         "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora distinctio dolorem omnis, beatae dicta pariatur molestiae, voluptate possimus ipsum ipsam consequatur illo! Dignissimos deleniti totam tempora optio doloremque vitae eius."
     }
