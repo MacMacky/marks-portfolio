@@ -36,11 +36,14 @@ export default {
           src: MLLogo,
           date: "2019 October",
           title: "Resigned after two years",
-          cardMessage: `My responsibilities were developing several fast RESTful APIs using used by several projects in our team.
-          designed and developed an Ecommerce web application in our company and deployed in production and improve the performance of the web application by using memoization 
-          a technique that optimizes a pure functions performance. Collaborating with the QA team during the testing phases for troubleshooting
-          or debugging, writing scripts for logging error and other useful informations in different testing phases and production for easy troubleshooting.
-          Interface with other development teams in the organization for projects that have common problems and diagnose them.`
+          cardMessage: [
+            "Performing unit testing for several Restful API's and avoided several system failures.",
+            `Handling Full Stack programming tasks for the development of a Ecommerce web app using Reactjs,
+              MySQL, Nodejs and Improve coding practices for the project for maintainability and optimizing the performance by using memoization.`,
+            `Troubleshooting & Bugs Fixing for several projects in different testing phases and 
+                          avoided Production errors.`,
+            `Maintaining Web application Legacy Systems utilizing ASP.NET.`
+          ]
         },
         {
           color: "red darken-4",
