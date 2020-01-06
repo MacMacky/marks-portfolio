@@ -165,7 +165,7 @@ export default {
             );
             this.clearFields();
           })
-          .catch(err => {
+          .catch(e => {
             this.isSending = false;
             this.updateSnackbarProps(true, e.message, "red");
           });
