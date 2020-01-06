@@ -167,7 +167,12 @@ export default {
           })
           .catch(e => {
             this.isSending = false;
-            this.updateSnackbarProps(true, e.message, "red");
+            var error = "message in e"
+              ? e.message
+              : "text" in e
+              ? e.text
+              : "Something went wrong.";
+            this.updateSnackbarProps(true, error, "red");
           });
       }
     },
