@@ -5,7 +5,7 @@
         <links />
       </v-card-text>
       <v-card-text class="py-0">
-        <p class="heading">&copy; {{year}} Mark A</p>
+        <p class="heading">&copy; {{year}} {{name}}</p>
       </v-card-text>
     </v-card>
   </v-footer>
@@ -15,6 +15,12 @@ import Links from "@/components/Links.vue";
 
 export default {
   name: "Footer",
+  props: {
+    name: {
+      type: String,
+      required: true
+    }
+  },
   data() {
     return {
       year: new Date().getFullYear()
