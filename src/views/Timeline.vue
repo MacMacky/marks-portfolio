@@ -42,7 +42,9 @@ export default {
               MySQL, Nodejs and Improve coding practices for the project for maintainability and optimizing the performance by using memoization.`,
             `Troubleshooting & Bugs Fixing for several projects in different testing phases and 
                           avoided Production errors.`,
-            `Maintaining Web application Legacy Systems utilizing ASP.NET.`
+            `Maintaining Web application Legacy Systems utilizing ASP.NET.`,
+            `Developing and Maintaining RESTful APIs using Nodejs based on client needs and Implemented with best software practices
+             to decrease code complexity and improve code maintainability`
           ]
         },
         {
