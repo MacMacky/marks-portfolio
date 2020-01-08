@@ -14,7 +14,7 @@
       </v-navigation-drawer>
       <v-toolbar app>
         <v-toolbar-title class="headline text-uppercase">
-          <span class="font-weight-light">Mark A</span>
+          <span class="font-weight-light">{{name}}</span>
         </v-toolbar-title>
         <v-spacer></v-spacer>
         <nav-item
@@ -36,7 +36,7 @@
       <Projects />
       <About />
       <Contact />
-      <portfolio-footer />
+      <portfolio-footer :name="name" />
     </v-app>
   </div>
 </template>
@@ -111,7 +111,8 @@ export default {
           label: "Contact",
           to: "#contact"
         }
-      ]
+      ],
+      name: "Mark Abeto"
     };
   },
   methods: {
