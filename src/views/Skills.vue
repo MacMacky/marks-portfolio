@@ -39,6 +39,7 @@ import Javascript from "@/components/svgs/Javascript";
 import React from "@/components/svgs/React";
 import Express from "@/components/svgs/Express";
 import Typescript from "@/components/svgs/Typescript";
+import Restify from "@/components/svgs/Restify";
 import Nodejs from "@/components/svgs/NodeJS";
 import Python from "@/components/svgs/Python";
 import Htmll from "@/components/svgs/HTML5";
@@ -89,7 +90,8 @@ export default {
     CardSkill,
     Javascript,
     Typescript,
-    Materialui
+    Materialui,
+    Restify
   },
   computed: {
     mainSkills() {
@@ -102,7 +104,8 @@ export default {
         { component: Python, mastery: 65, label: "Python" },
         { component: Htmll, mastery: 65, label: "HTML5" },
         { component: Css, mastery: 65, label: "CSS3" },
-        { component: ES6, mastery: 80, label: "ES6" }
+        { component: ES6, mastery: 80, label: "ES6" },
+        { component: Restify, mastery: 80, label: "Restify" }
       ];
     },
     subSkills() {
@@ -120,7 +123,7 @@ export default {
         { component: Github, mastery: 40, label: "Github" },
         { component: Vuetify, mastery: 70, label: "Vuetify" },
         { component: Chai, mastery: 45, label: "Chai" },
-        { component: Mocha, mastery: 55, label: "Mocha" },
+        { component: Mocha, mastery: 55, label: "Mocha" }
         // { component: Flask, mastery: 55, label: "Flask" }
       ];
     }
