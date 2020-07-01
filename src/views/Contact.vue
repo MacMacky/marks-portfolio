@@ -74,124 +74,126 @@
   </div>
 </template>
 <script>
-import CardSkill from "@/components/CardSkill.vue";
-import { setTimeout } from "timers";
+import CardSkill from '@/components/CardSkill.vue';
+import { setTimeout } from 'timers';
 
 export default {
-  name: "Contact",
+  name: 'Contact',
   data: () => {
     return {
       isSending: false,
-      email: "",
-      location: "",
-      name: "",
-      message: "",
+      email: '',
+      location: '',
+      name: '',
+      message: '',
       hasValidValues: [false, false, false, false],
       snackbarProps: {
         open: false,
-        message: "adfafa",
-        color: "green"
-      }
+        message: 'adfafa',
+        color: 'green',
+      },
     };
   },
   created() {
-    emailjs.init("user_mEN2ctZPReJpsfh9aVI8i");
+    emailjs.init('user_mEN2ctZPReJpsfh9aVI8i');
   },
   components: {
-    CardSkill
+    CardSkill,
   },
   computed: {
     emailRules() {
       return [
         v =>
           (this.setValidity(0, true), !!v) ||
-          (this.setValidity(0, false), "Email is Required"),
-        v => /.+@.+\.{1}.{2,}/.test(v) || "Please provide a valid Email"
+          (this.setValidity(0, false), 'Email is Required'),
+        v => /.+@.+\.{1}.{2,}/.test(v) || 'Please provide a valid Email',
       ];
     },
     messageRules() {
       return [
         v =>
           (this.setValidity(1, true), !!v) ||
-          (this.setValidity(1, false), "Message is Required"),
-        v => (v && v.length > 10) || "Please provide a valid Message"
+          (this.setValidity(1, false), 'Message is Required'),
+        v => (v && v.length > 10) || 'Please provide a valid Message',
       ];
     },
     locationRules() {
       return [
         v =>
           (this.setValidity(2, true), !!v) ||
-          (this.setValidity(2, false), "Location is Required"),
+          (this.setValidity(2, false), 'Location is Required'),
         v =>
-          (this.setValidity(2, true), v && v.length > 6) ||
-          (this.setValidity(2, false), "Please provide a valid Location")
+          (this.setValidity(2, true), v && v.length > 3) ||
+          (this.setValidity(2, false), 'Please provide a valid Location'),
       ];
     },
     nameRules() {
       return [
         v =>
           (this.setValidity(3, true), !!v) ||
-          (this.setValidity(3, false), "Name is Required"),
+          (this.setValidity(3, false), 'Name is Required'),
         v =>
           (this.setValidity(3, true), v && v.length > 3) ||
-          (this.setValidity(3, false), "Please provide a valid Name")
+          (this.setValidity(3, false), 'Please provide a valid Name'),
       ];
-    }
+    },
   },
   methods: {
-    handleSendMessage() {
+    async handleSendMessage() {
       if (this.hasValidValues.some(value => !value)) {
         this.updateSnackbarProps(
           true,
-          "Please provide values in the following fields",
-          "red"
+          'Please provide values in the following fields',
+          'red',
         );
       } else {
-        this.isSending = true;
-        emailjs
-          .send("default_service", "template_GNsxgOTU", {
-            name: this.name,
-            from_name: "Mark",
-            message_html: this.message,
-            from_location: this.location,
-            from_email: this.email
-          })
-          .then(resp => {
-            this.isSending = false;
-            this.updateSnackbarProps(
-              true,
-              "Your message has been sent Successfully.",
-              "green"
-            );
-            this.clearFields();
-          })
-          .catch(e => {
-            this.isSending = false;
-            var error = "message in e"
-              ? e.message
-              : "text" in e
-              ? e.text
-              : "Something went wrong.";
-            this.updateSnackbarProps(true, error, "red");
-          });
+        try {
+          this.isSending = true;
+          const resp = await emailjs.send(
+            'default_service',
+            'template_GNsxgOTU',
+            {
+              to_name: 'Mark',
+              from_name: this.name,
+              message_html: this.message,
+              from_location: this.location,
+              from_email: this.email,
+            },
+          );
+          this.isSending = false;
+          this.updateSnackbarProps(
+            true,
+            'Your message has been sent Successfully.',
+            'green',
+          );
+          this.clearFields();
+        } catch (e) {
+          this.isSending = false;
+          var error = 'message in e'
+            ? e.message
+            : 'text' in e
+            ? e.text
+            : 'Something went wrong.';
+          this.updateSnackbarProps(true, error, 'red');
+        }
       }
     },
     updateSnackbarProps(open, message, color) {
       this.snackbarProps = {
         open,
         message,
-        color
+        color,
       };
     },
     setValidity(index, isValid) {
       this.hasValidValues[index] = isValid;
     },
     clearFields() {
-      (this.message = ""),
-        (this.location = ""),
-        (this.email = ""),
-        (this.name = "");
-    }
-  }
+      (this.message = ''),
+        (this.location = ''),
+        (this.email = ''),
+        (this.name = '');
+    },
+  },
 };
 </script>
