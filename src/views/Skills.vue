@@ -129,7 +129,7 @@ export default {
         { component: Mocha, mastery: 55, label: 'Mocha' },
         { component: RethinkDB, mastery: 55, label: 'RethinkDB' },
         { component: Docker, mastery: 55, label: 'Docker' },
-        // { component: Flask, mastery: 55, label: "Flask" }
+        { component: Flask, mastery: 55, label: 'Flask-RESTful' },
       ];
     },
   },
