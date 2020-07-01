@@ -3,15 +3,19 @@
 </template>
 
 <script>
-import Main from "./views/Main.vue";
+import Main from './views/Main.vue';
 export default {
-  name: "App",
+  name: 'App',
   components: {
-    MainApp: Main
-  }
+    MainApp: Main,
+  },
 };
 </script>
 <style>
+.v-card {
+  border-radius: 8px;
+}
+
 @media screen and (max-width: 850px) and (min-width: 520px) {
   svg:not(.small) {
     width: 75px;
