@@ -36,6 +36,14 @@
             :imagePath="require('../assets/web.png')"
           ></card-project>
         </v-flex>
+        <v-flex xs12 md5 lg4>
+          <card-project
+            :role="'Back-End'"
+            :projectName="'Backups'"
+            :backTechnologies="backups"
+            :imagePath="require('../assets/backups.png')"
+          ></card-project>
+        </v-flex>
       </v-layout>
     </v-container>
   </div>
@@ -55,6 +63,9 @@ import Express from '@/components/svgs/Express.vue';
 import TypeScript from '@/components/svgs/Typescript.vue';
 import Javascript from '@/components/svgs/Javascript.vue';
 import MaterialUI from '@/components/svgs/MaterialUI.vue';
+import Restify from '@/components/svgs/Restify.vue';
+import RethinkDB from '@/components/svgs/RethinkDB.vue';
+import AWSS3 from '@/components/svgs/AWSS3.vue';
 
 export default {
   name: 'Projects',
@@ -71,6 +82,10 @@ export default {
       mlshopmerchantFront: [
         [React, MaterialUI, Redux, Sass],
         [Jest, TypeScript, Javascript],
+      ],
+      backups: [
+        [Restify, RethinkDB, Nodejs],
+        [AWSS3, Javascript],
       ],
     };
   },
