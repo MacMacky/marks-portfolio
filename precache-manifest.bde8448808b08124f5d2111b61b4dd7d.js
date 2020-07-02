@@ -1,15 +1,15 @@
 self.__precacheManifest = [
   {
-    "revision": "a7cbb522985693b6ac35",
+    "revision": "f83f8344215e4a5417e8",
     "url": "css/app.777558f1.css"
   },
   {
-    "revision": "a7cbb522985693b6ac35",
-    "url": "js/app.d8b5d8ef.js"
+    "revision": "f83f8344215e4a5417e8",
+    "url": "js/app.9a4bb134.js"
   },
   {
-    "revision": "89cb12f41b95e50efe67",
-    "url": "js/chunk-6b2ce7e2.0850a6f7.js"
+    "revision": "0c2e02589814bb7b5b6f",
+    "url": "js/chunk-2d237cc7.c1e1da59.js"
   },
   {
     "revision": "fb19693f0194e1355197",
@@ -20,8 +20,8 @@ self.__precacheManifest = [
     "url": "js/chunk-vendors.6dea07e0.js"
   },
   {
-    "revision": "a24ac1204945f057edd55be9e57b99ef",
-    "url": "img/ezgif.com-gif-maker.a24ac120.gif"
+    "revision": "813d55decfeb2421846baee63e6dbc14",
+    "url": "img/merchant.813d55de.gif"
   },
   {
     "revision": "e2a037d278b18dddfe1debadb5462502",
@@ -40,6 +40,14 @@ self.__precacheManifest = [
     "url": "img/mlhuillier_logo.933e9704.jpg"
   },
   {
+    "revision": "591ad1352dd1d3b3a36a4e2aea149e81",
+    "url": "img/partners.591ad135.png"
+  },
+  {
+    "revision": "d36f02a7cfa60e0bf57c515f562e536c",
+    "url": "img/admin.d36f02a7.png"
+  },
+  {
     "revision": "07d1e22e8cddd99a53037dc510221b7b",
     "url": "img/logo.07d1e22e.svg"
   },
@@ -52,7 +60,11 @@ self.__precacheManifest = [
     "url": "img/school_logo.b821bc7e.jpg"
   },
   {
-    "revision": "3787e7fc1bdd8258c35765a8b045e6db",
+    "revision": "546652c8be451ba450cfa9b6b5281a29",
+    "url": "img/web.546652c8.png"
+  },
+  {
+    "revision": "a86b6c685e023a2681fcbad577a40895",
     "url": "index.html"
   },
   {
