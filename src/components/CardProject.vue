@@ -1,6 +1,6 @@
 <template>
   <v-card color="white" class="ma-3 card-project">
-    <v-img :src="require('../assets/ezgif.com-gif-maker.gif')" height="200px"></v-img>
+    <v-img :src="imagePath" height="250px"></v-img>
     <v-card-text class="blue-grey lighten-5 pb-0">
       <div>
         <div class="headline black--text">{{projectName}}</div>
@@ -48,12 +48,12 @@
       </v-layout>
     </v-card-text>
     <v-card-text class="blue-grey lighten-5 pt-1 pb-1">
-      <v-layout row mt-1 pt-1>
+      <!-- <v-layout row mt-1 pt-1>
         <v-flex xs6 md6 justify-center>
           <p class="text-xs-center mb-0">
-            <v-btn icon target="__blank">
+            <v-btn target="__blank" disabled>
               <v-icon color="grey darken-4">open_in_browser</v-icon>&nbsp;
-              <span class="black--text">&nbsp; View</span>
+              <span class="black--text now-viewable">&nbsp; View</span>
             </v-btn>
           </p>
         </v-flex>
@@ -65,30 +65,34 @@
             </v-btn>
           </p>
         </v-flex>
-      </v-layout>
+      </v-layout>-->
     </v-card-text>
   </v-card>
 </template>
 <script>
 export default {
-  name: "CardProject",
+  name: 'CardProject',
   props: {
     role: {
       type: String,
-      required: true
+      required: true,
     },
     projectName: {
       type: String,
-      required: true
+      required: true,
     },
     frontTechnologies: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     backTechnologies: {
       type: Array,
-      default: () => []
-    }
-  }
+      default: () => [],
+    },
+    imagePath: {
+      type: String,
+      default: require('../assets/not_found_image.jpg'),
+    },
+  },
 };
 </script>
