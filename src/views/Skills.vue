@@ -63,6 +63,7 @@ import Chai from '@/components/svgs/Chai';
 import Flask from '@/components/svgs/Flask';
 import RethinkDB from '@/components/svgs/RethinkDB';
 import Docker from '@/components/svgs/Docker';
+import AWSS3 from '@/components/svgs/AWSS3.vue';
 
 export default {
   name: 'Skills',
@@ -95,6 +96,7 @@ export default {
     Materialui,
     Restify,
     Docker,
+    AWSS3,
   },
   computed: {
     mainSkills() {
@@ -130,6 +132,7 @@ export default {
         { component: RethinkDB, mastery: 55, label: 'RethinkDB' },
         { component: Docker, mastery: 55, label: 'Docker' },
         { component: Flask, mastery: 55, label: 'Flask-RESTful' },
+        { component: AWSS3, mastery: 55, label: 'Amazon S3' },
       ];
     },
   },
